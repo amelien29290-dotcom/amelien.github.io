@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio développeur web">
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo-container">
+    <img src="../img/logo.png" alt="Logo Amélien Guimet" class="logo">
+    <h1>Amélien Guimet</h1>
+    <div class="search-container">
+  <input type="text" id="searchInput" placeholder="Rechercher un projet...">
+</div>
+<div class="social-links">
+  <a href="https://instagram.com" target="_blank">Instagram</a>
+  <a href="https://twitter.com" target="_blank">Twitter</a>
+  <a href="https://github.com" target="_blank">GitHub</a>
+</div>
+  <nav>
+    <ul>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="about">
+  <h2>À propos de moi</h2>
+
+  <div class="about-container">
+    <img src="../img/photo.jpg" alt="Photo de profil Amélien Guimet" class="profile-pic">
+
+    <p>
+      Je suis développeur web en formation, passionné par le front-end
+      et la création d’interfaces modernes.
+    </p>
+  </div>
+</section>
+    <section id="projects">
+  <h2>Mes projets</h2>
+
+  <div class="projects-grid">
+
+    <article class="project-card">
+      <h3>Site e-commerce</h3>
+      <img src="../img/test.png" alt="Capture écran site e-commerce">
+      <p>Création d’un site marchand en HTML et CSS.</p>
+    </article>
+
+    <article class="project-card">
+      <h3>Application météo</h3>
+      <img src="../img/test1.png" alt="Capture écran application météo">
+      <p>Application utilisant une API météo en JavaScript.</p>
+    </article>
+
+  </div>
+</section>
+   <section id="contact">
+  <h2>Contact</h2>
+
+  <div class="contact-container">
+    <form class="contact-form">
+
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Votre email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Envoyer le message</button>
+
+    </form>
+  </div>
+</section>
+</main>
+<footer>
+  <p>&copy; 2026 Amélien Guimet - Tous droits réservés</p>
+</footer>
+<script>
+const searchInput = document.getElementById("searchInput");
+const projects = document.querySelectorAll(".project-card");
+
+searchInput.addEventListener("keyup", function() {
+  const value = this.value.toLowerCase();
+
+  projects.forEach(project => {
+    const text = project.innerText.toLowerCase();
+    project.style.display = text.includes(value) ? "block" : "none";
+  });
+});
+</script>
+</body>
+</html>
